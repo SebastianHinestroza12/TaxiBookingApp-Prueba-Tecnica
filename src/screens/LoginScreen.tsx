@@ -57,7 +57,7 @@ export const LoginScreen: React.FC = () => {
       }
 
       //Authentication Success
-      dispatch(setAuthenticated(true));
+      dispatch(setAuthenticated(findUser.id));
       navigation.navigate('TabBottomScreen');
       showToast(`Welcome ${findUser.name}`);
     } catch (error) {
@@ -133,7 +133,7 @@ export const LoginScreen: React.FC = () => {
         />
 
         <Text style={styles.forgotPassword}>Forgot your password?</Text>
-          <ButtonGradient onSubmit={handleSubmit(onSubmit)} />
+        <ButtonGradient onSubmit={handleSubmit(onSubmit)} text="SIGN IN" />
         <Text style={styles.forgotPassword}>Don't have an account?</Text>
         <StatusBar barStyle={'default'} />
       </View>

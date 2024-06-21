@@ -2,15 +2,21 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-export const ButtonGradient = ({ onSubmit }: {onSubmit: any}) => {
+export const ButtonGradient = ({
+  onSubmit,
+  text,
+}: {
+  onSubmit: any;
+  text: string;
+}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={()=> onSubmit()}>
+    <TouchableOpacity style={styles.container} onPress={() => onSubmit()}>
       <LinearGradient
         colors={['#FFB84D', '#E38800']}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}
         style={styles.button}>
-        <Text style={styles.text}>SIGN IN</Text>
+        <Text style={styles.text}>{text}</Text>
       </LinearGradient>
     </TouchableOpacity>
   );
