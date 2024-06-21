@@ -1,6 +1,7 @@
 export interface User {
   id: number;
   name: string;
+  lastName: string;
   password: string;
   email: string;
   age: number;
@@ -9,5 +10,5 @@ export interface User {
 
 export interface AuthState {
   users: User[];
-  authenticated: boolean;
+  authenticatedUser: null | number;
 }
