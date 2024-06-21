@@ -1,6 +1,19 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
+import {Booking} from '../components/Booking';
 
 export const BookingScreen = () => {
-  return <Text>Booking Screen</Text>;
+  return (
+    <ScrollView style={styles.container}>
+      <Booking />
+    </ScrollView>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#FFFFFF',
+  },
+});
