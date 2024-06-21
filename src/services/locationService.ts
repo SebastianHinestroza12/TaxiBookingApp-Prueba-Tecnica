@@ -1,4 +1,18 @@
 /* eslint-disable no-bitwise */
+/**
+ * La función `decodePolyline` decodifica una cadena de polilínea codificada en una matriz de
+ * coordenadas de latitud y longitud con una precisión especificada.
+ * @param {string} encoded - El parámetro "codificado" en la función "decodePolyline" es una cadena que
+ * representa los datos de polilínea codificados que deben decodificarse en coordenadas de latitud y
+ * longitud. Esta cadena codificada contiene una serie de caracteres que codifican las coordenadas.
+ * @param {number} [precision=5] - El parámetro `precision` en la función `decodePolyline` determina el
+ * número de decimales que se utilizarán para las coordenadas de latitud y longitud después de
+ * decodificar la polilínea. El valor predeterminado es 5 si no se proporciona explícitamente. Este
+ * parámetro se utiliza para dividir los valores decodificados por un factor de 10 elevado al
+ * @returns La función `decodePolyline` devuelve una matriz de matrices que contienen coordenadas de
+ * latitud y longitud. Cada par de coordenadas se decodifica a partir de la cadena codificada
+ * proporcionada utilizando un valor de precisión específico.
+ */
 export const decodePolyline = (
   encoded: string,
   precision: number = 5,
