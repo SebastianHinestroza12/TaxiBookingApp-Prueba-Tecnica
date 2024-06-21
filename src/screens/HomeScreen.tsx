@@ -44,6 +44,10 @@ export const HomeScreen = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    /**
+     * La función `checkPermission` busca y solicita acceso a permisos de ubicación
+     * finos en Android, mostrando mensajes apropiados según la respuesta del usuario.
+     */
     const checkPermission = async () => {
       if (Platform.OS === 'android') {
         const status = await PermissionsAndroid.check(
@@ -81,6 +85,10 @@ export const HomeScreen = () => {
       }
     };
 
+    /**
+     * La función `getLocation` recupera las coordenadas de geolocalización actuales, establece el
+     * estado de la ubicación y recupera la dirección en función de las coordenadas.
+     */
     const getLocation = () => {
       Geolocation.getCurrentPosition(
         position => {
@@ -115,6 +123,17 @@ export const HomeScreen = () => {
     }
   }, [currentLocation, destination]);
 
+  /**
+   * La función fetchAddress es una función asincrónica que recupera la dirección correspondiente a una
+   * latitud y longitud determinadas utilizando la API de codificación geográfica de Google Maps y
+   * actualiza el estado de la dirección en un componente de React.
+   * @param {LatLng} location - El parámetro "ubicación" es de tipo "LatLng", que probablemente
+   * representa una ubicación geográfica con coordenadas de latitud y longitud.
+   * @param setAddress - El parámetro `setAddress` es una función que le permite actualizar el estado de
+   * una dirección en un componente de React. Es una función `React.Dispatch` que toma
+   * `React.SetStateAction` como argumento. Esta función se utiliza normalmente para actualizar el
+   * estado de un componente con el valor obtenido
+   */
   const fetchAddress = async (
     location: LatLng,
     setAddress: React.Dispatch<React.SetStateAction<string | null>>,
@@ -137,6 +156,15 @@ export const HomeScreen = () => {
     }
   };
 
+  /**
+   * La función busca una ruta utilizando la API de direcciones de Google Maps en función de la ubicación
+   * actual y el destino proporcionado.
+   * @param {LatLng} currentLocationData - El parámetro `currentLocationData` es un objeto que contiene
+   * las coordenadas de latitud y longitud de la ubicación actual. Tiene la siguiente estructura:
+   * @param {LatLng} destinationData - El parámetro `destinationData` en la función `fetchRoute`
+   * representa las coordenadas de latitud y longitud del destino donde desea buscar la ruta. Es de tipo
+   * "LatLng", que normalmente contiene los valores de latitud y longitud de una ubicación en el mapa.
+   */
   const fetchRoute = async (
     currentLocationData: LatLng,
     destinationData: LatLng,
