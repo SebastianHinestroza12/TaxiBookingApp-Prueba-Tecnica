@@ -6,6 +6,7 @@ buildscript {
         targetSdkVersion = 34
         ndkVersion = "25.1.8937393"
         kotlinVersion = "1.8.0"
+        googleMapsApiKey = project.hasProperty('GOOGLE_MAPS_API_KEY') ? project.property('GOOGLE_MAPS_API_KEY') : ""
     }
     repositories {
         google()

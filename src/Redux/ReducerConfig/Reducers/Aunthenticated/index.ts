@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AuthState } from '../../../../interfaces';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {AuthState} from '../../../../interfaces';
 
 const initialState: AuthState = {
   users: [

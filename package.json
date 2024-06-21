@@ -17,6 +17,8 @@
     "@react-navigation/stack": "^6.3.20",
     "@reduxjs/toolkit": "^2.2.1",
     "@types/react-redux": "^7.1.33",
+    "axios": "^1.7.2",
+    "deprecated-react-native-prop-types": "^5.0.0",
     "react": "18.2.0",
     "react-hook-form": "^7.50.1",
     "react-native": "^0.73.2",
@@ -46,6 +48,7 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
+    "react-native-dotenv": "^3.4.11",
     "react-test-renderer": "18.2.0",
     "typescript": "5.0.4"
   },

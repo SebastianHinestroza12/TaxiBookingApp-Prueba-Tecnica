@@ -12,3 +12,16 @@ export interface AuthState {
   users: User[];
   authenticatedUser: null | number;
 }
+
+export interface Booking {
+  id: number;
+  status: string;
+  origin: string | null;
+  destination: string | null;
+  duration: string | null;
+  estimatedDistance: string | null;
+}
+
+export interface BookingState {
+  bookings: Booking[];
+}
